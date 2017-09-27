@@ -6,6 +6,7 @@ teleport:
   data_dir: /var/lib/teleport
   pid_file: /var/run/teleport.pid
   auth_token: cluster-join-token
+  advertise_ip: 10.100.198.200
   auth_servers:
   - 0.0.0.0:3025
   connection_limits:
@@ -18,7 +19,8 @@ auth_service:
   enabled: "yes"
   listen_addr: 0.0.0.0:3025
   tokens:
-  - proxy,node:xxxxxx
+  - "proxy,node:xxxxxx"
+  - "auth:xxxxxx"
   oidc_connectors: []
 ssh_service:
   enabled: "yes"
